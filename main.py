@@ -14,7 +14,9 @@ import sys
 import psutil
 import json
 import win10toast
-from os import popen
+from os import popen, getcwd
+
+PATH = getcwd()
 
 interface_s = list(psutil.net_if_addrs().keys())
 icon_path = "change_dns.ico"
@@ -182,7 +184,7 @@ class Ui_Form(object):
         
         self.gridLayout.addWidget(self.reset, 0, 1, 1, 1)
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(0, 580, 211, 21))
+        self.label.setGeometry(QtCore.QRect(0, 580, 400, 21))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(False)
@@ -206,7 +208,7 @@ class Ui_Form(object):
         self.groupBox_3.setTitle(_translate("Form", "Interface"))
         self.connect.setText(_translate("Form", "Connect"))
         self.reset.setText(_translate("Form", "Reset"))
-        self.label.setText(_translate("Form", "https://github.com/kinite-gp"))
+        self.label.setText(_translate("Form", "https://github.com/mohammad3a1eh"))
         
     def set_provider(self, Form):
         self.primary.setText(configs["providers"][self.provider.currentText()]["primary"])
@@ -243,6 +245,7 @@ if __name__ == "__main__":
     if is_admin():
         app = QtWidgets.QApplication(sys.argv)
         MainWindows = QtWidgets.QMainWindow()
+        MainWindows.setWindowIcon(QtGui.QIcon(fr"{PATH}/icon.png"))
         ui = Ui_Form()
         ui.setupUi(MainWindows)
         MainWindows.show()
