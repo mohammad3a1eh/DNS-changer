@@ -77,6 +77,14 @@
             "primary" : "10.202.10.10",
             "secondary" : "10.202.10.11" 
         },
+        "Shelter1 DNS " : {
+            "primary" : "91.92.255.160",
+            "secondary" : "91.92.255.242" 
+        },
+        "Shelter2 DNS " : {
+            "primary" : "45.66.231.67",
+            "secondary" : "0.0.0.0" 
+        },
 
 
 
